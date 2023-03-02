@@ -151,7 +151,7 @@ function App() {
                   <td>
                     <Button onClick={() => handleSend(line)}>Send</Button>
                   </td>
-                  <td className="align-middle">
+                  <td className={`align-middle ${line.status === "Done" ? "text-success" : ""}`}>
                     {line.status || ""} {hashLink(line.hash)}
                   </td>
                 </tr>
