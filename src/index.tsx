@@ -1,31 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { WagmiConfig, createClient, goerli } from "wagmi";
-import { configureChains, mainnet } from "wagmi";
-import { alchemyProvider } from "wagmi/providers/alchemy";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 
-const { provider, webSocketProvider } = configureChains(
-  [mainnet, goerli],
-  [alchemyProvider({ apiKey: process.env.REACT_APP_ALCHEMY_KEY || "NO_KEY" })],
-);
-
-const client = createClient({
-  autoConnect: true,
-  provider,
-  webSocketProvider,
-});
-
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
 root.render(
   <React.StrictMode>
-    <WagmiConfig client={client}>
-      <App />
-    </WagmiConfig>
+    <App />
   </React.StrictMode>,
 );
 
