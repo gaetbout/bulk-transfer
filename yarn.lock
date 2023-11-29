@@ -2270,6 +2270,36 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
+"@rometools/cli-darwin-arm64@12.1.3":
+  version "12.1.3"
+  resolved "https://registry.yarnpkg.com/@rometools/cli-darwin-arm64/-/cli-darwin-arm64-12.1.3.tgz#b00fe225e34047c4dac63588e237b11ebec47694"
+  integrity sha512-AmFTUDYjBuEGQp/Wwps+2cqUr+qhR7gyXAUnkL5psCuNCz3807TrUq/ecOoct5MIavGJTH6R4aaSL6+f+VlBEg==
+
+"@rometools/cli-darwin-x64@12.1.3":
+  version "12.1.3"
+  resolved "https://registry.yarnpkg.com/@rometools/cli-darwin-x64/-/cli-darwin-x64-12.1.3.tgz#e5bbf02afb1aab7447e743092245dea992b4b29f"
+  integrity sha512-k8MbWna8q4LRlb005N2X+JS1UQ+s3ZLBBvwk4fP8TBxlAJXUz17jLLu/Fi+7DTTEmMhM84TWj4FDKW+rNar28g==
+
+"@rometools/cli-linux-arm64@12.1.3":
+  version "12.1.3"
+  resolved "https://registry.yarnpkg.com/@rometools/cli-linux-arm64/-/cli-linux-arm64-12.1.3.tgz#e75b01b74c134edc811e21fa7e1e440602930d59"
+  integrity sha512-X/uLhJ2/FNA3nu5TiyeNPqiD3OZoFfNfRvw6a3ut0jEREPvEn72NI7WPijH/gxSz55znfQ7UQ6iM4DZumUknJg==
+
+"@rometools/cli-linux-x64@12.1.3":
+  version "12.1.3"
+  resolved "https://registry.yarnpkg.com/@rometools/cli-linux-x64/-/cli-linux-x64-12.1.3.tgz#2b9f4a68079783f275d4d27df83e4fa2220ec6fc"
+  integrity sha512-csP17q1eWiUXx9z6Jr/JJPibkplyKIwiWPYNzvPCGE8pHlKhwZj3YHRuu7Dm/4EOqx0XFIuqqWZUYm9bkIC8xg==
+
+"@rometools/cli-win32-arm64@12.1.3":
+  version "12.1.3"
+  resolved "https://registry.yarnpkg.com/@rometools/cli-win32-arm64/-/cli-win32-arm64-12.1.3.tgz#714acb67ac4ea4c15e2bc6aea4dd290c76c8efc6"
+  integrity sha512-RymHWeod57EBOJY4P636CgUwYA6BQdkQjh56XKk4pLEHO6X1bFyMet2XL7KlHw5qOTalzuzf5jJqUs+vf3jdXQ==
+
+"@rometools/cli-win32-x64@12.1.3":
+  version "12.1.3"
+  resolved "https://registry.yarnpkg.com/@rometools/cli-win32-x64/-/cli-win32-x64-12.1.3.tgz#b4f53491d2ca8f1234b3613b7cc73418ad8d76bb"
+  integrity sha512-yHSKYidqJMV9nADqg78GYA+cZ0hS1twANAjiFibQdXj9aGzD+s/IzIFEIi/U/OBLvWYg/SCw0QVozi2vTlKFDQ==
+
 "@rushstack/eslint-patch@^1.1.0":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz"
@@ -2305,11 +2335,6 @@
   integrity sha512-3BvlUgp0oZ1Zkn7nG3wY1jvCEE4t530BjKcaa3r0qsf0whf/ez/0gmQwk7DTOGmVmvOfjj6HHikxnrUCCX+/3Q==
   dependencies:
     cross-fetch "^3.1.5"
-
-"@scure/base@^1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@scure/base/-/base-1.1.3.tgz#8584115565228290a6c6c4961973e0903bb3df2f"
-  integrity sha512-/+SgoRjLq7Xlf0CWuLHq2LUZeL/w65kfzAPG5NH9pcmBhs+nunQTn4gvdwgMTIXnt9b2C/1SeL2XiysZEyIC9Q==
 
 "@scure/starknet@~0.3.0":
   version "0.3.0"
@@ -3768,6 +3793,17 @@ abab@^2.0.3, abab@^2.0.5:
   resolved "https://registry.npmjs.org/abab/-/abab-2.0.6.tgz"
   integrity sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==
 
+abi-wan-kanabi@^1.0.1, abi-wan-kanabi@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/abi-wan-kanabi/-/abi-wan-kanabi-1.0.3.tgz#0d8607f2a2ccb2151a69debea1c3bb68b76c5aa2"
+  integrity sha512-Xwva0AnhXx/IVlzo3/kwkI7Oa7ZX7codtcSn+Gmoa2PmjGPF/0jeVud9puasIPtB7V50+uBdUj4Mh3iATqtBvg==
+  dependencies:
+    abi-wan-kanabi "^1.0.1"
+    fs-extra "^10.0.0"
+    rome "^12.1.3"
+    typescript "^4.9.5"
+    yargs "^17.7.2"
+
 abitype@^0.3.0:
   version "0.3.0"
   resolved "https://registry.npmjs.org/abitype/-/abitype-0.3.0.tgz"
@@ -4746,6 +4782,15 @@ cliui@^7.0.2:
   dependencies:
     string-width "^4.2.0"
     strip-ansi "^6.0.0"
+    wrap-ansi "^7.0.0"
+
+cliui@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/cliui/-/cliui-8.0.1.tgz#0c04b075db02cbfe60dc8e6cf2f5486b1a3608aa"
+  integrity sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==
+  dependencies:
+    string-width "^4.2.0"
+    strip-ansi "^6.0.1"
     wrap-ansi "^7.0.0"
 
 clsx@^1.1.0:
@@ -10436,6 +10481,18 @@ rollup@^2.43.1:
   optionalDependencies:
     fsevents "~2.3.2"
 
+rome@^12.1.3:
+  version "12.1.3"
+  resolved "https://registry.yarnpkg.com/rome/-/rome-12.1.3.tgz#4d4d62cad16216843680bd3ca11a4c248134902a"
+  integrity sha512-e+ff72hxDpe/t5/Us7YRBVw3PBET7SeczTQNn6tvrWdrCaAw3qOukQQ+tDCkyFtS4yGsnhjrJbm43ctNbz27Yg==
+  optionalDependencies:
+    "@rometools/cli-darwin-arm64" "12.1.3"
+    "@rometools/cli-darwin-x64" "12.1.3"
+    "@rometools/cli-linux-arm64" "12.1.3"
+    "@rometools/cli-linux-x64" "12.1.3"
+    "@rometools/cli-win32-arm64" "12.1.3"
+    "@rometools/cli-win32-x64" "12.1.3"
+
 rpc-websockets@^7.5.1:
   version "7.5.1"
   resolved "https://registry.npmjs.org/rpc-websockets/-/rpc-websockets-7.5.1.tgz"
@@ -10859,14 +10916,14 @@ standard-as-callback@^2.1.0:
   resolved "https://registry.npmjs.org/standard-as-callback/-/standard-as-callback-2.1.0.tgz"
   integrity sha512-qoRRSyROncaz1z0mvYqIE4lCd9p2R90i6GxW3uZv5ucSu8tU7B5HXUP1gG8pVZsYNVaXjk8ClXHPttLyxAL48A==
 
-starknet@^5.24.3:
-  version "5.24.3"
-  resolved "https://registry.yarnpkg.com/starknet/-/starknet-5.24.3.tgz#1d8a84047783ea122a6cf4f2dac59bfa6d628154"
-  integrity sha512-v0TuaNc9iNtHdbIRzX372jfQH1vgx2rwBHQDMqK4DqjJbwFEE5dog8Go6rGiZVW750NqRSWrZ7ahqyRNc3bscg==
+starknet@5.19.5:
+  version "5.19.5"
+  resolved "https://registry.yarnpkg.com/starknet/-/starknet-5.19.5.tgz#59a2e0f707dc1f64fbe9894195984ae97f623449"
+  integrity sha512-S7V4ifyYd+ApsIwYTd7YA5U2Px+NZkCsQPnmgY/wkc5LLFKhYMNpzHQ5nIA15p70AwtSXCcsEBnHNRBOuci13Q==
   dependencies:
     "@noble/curves" "~1.2.0"
-    "@scure/base" "^1.1.3"
     "@scure/starknet" "~0.3.0"
+    abi-wan-kanabi "^1.0.3"
     isomorphic-fetch "^3.0.0"
     lossless-json "^2.0.8"
     pako "^2.0.4"
@@ -10942,7 +10999,7 @@ string-width@^3.0.0, string-width@^3.1.0:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^5.1.0"
 
-string-width@^4.1.0, string-width@^4.2.0:
+string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
   version "4.2.3"
   resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -11442,9 +11499,9 @@ typedarray-to-buffer@3.1.5, typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@^4.4.2:
+typescript@^4.4.2, typescript@^4.9.5:
   version "4.9.5"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-4.9.5.tgz"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.5.tgz#095979f9bcc0d09da324d58d03ce8f8374cbe65a"
   integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
 
 ufo@^1.3.0, ufo@^1.3.1, ufo@^1.3.2:
@@ -12302,6 +12359,11 @@ yargs-parser@^20.2.2:
   resolved "https://registry.npmjs.org/yargs-parser/-/yargs-parser-20.2.9.tgz"
   integrity sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==
 
+yargs-parser@^21.1.1:
+  version "21.1.1"
+  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-21.1.1.tgz#9096bceebf990d21bb31fa9516e0ede294a77d35"
+  integrity sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==
+
 yargs-unparser@2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/yargs-unparser/-/yargs-unparser-2.0.0.tgz"
@@ -12357,6 +12419,19 @@ yargs@^15.3.1:
     which-module "^2.0.0"
     y18n "^4.0.0"
     yargs-parser "^18.1.2"
+
+yargs@^17.7.2:
+  version "17.7.2"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-17.7.2.tgz#991df39aca675a192b816e1e0363f9d75d2aa269"
+  integrity sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==
+  dependencies:
+    cliui "^8.0.1"
+    escalade "^3.1.1"
+    get-caller-file "^2.0.5"
+    require-directory "^2.1.1"
+    string-width "^4.2.3"
+    y18n "^5.0.5"
+    yargs-parser "^21.1.1"
 
 yn@3.1.1:
   version "3.1.1"
