@@ -186,15 +186,15 @@
   color: #e0e7ff !important;
   font-weight: 700 !important;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 0.5px;
-  padding: 1rem !important;
+  padding: 0.65rem 0.75rem !important;
 }
 
 .table tbody td {
   background: rgba(255, 255, 255, 0.08) !important;
   border-color: rgba(255, 255, 255, 0.15) !important;
-  padding: 1rem !important;
+  padding: 0.65rem 0.75rem !important;
   color: #f7fafc !important;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -205,21 +205,21 @@
 }
 
 .table .col-name {
-  width: 12%;
+  width: 10%;
 }
 
 .table .col-address {
-  width: 28%;
+  width: 34%;
   font-family: monospace;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .table .col-token {
-  width: 12%;
+  width: 8%;
 }
 
 .table .col-amount {
-  width: 20%;
+  width: 12%;
 }
 
 .send-btn {
