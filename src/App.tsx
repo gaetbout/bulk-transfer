@@ -5,7 +5,7 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import { parse } from "papaparse";
 import { ethers } from "ethers";
-import { Call, CallData, RpcProvider, uint256 } from "starknet";
+import { Call, CallData, uint256 } from "starknet";
 import "./App.css";
 
 //

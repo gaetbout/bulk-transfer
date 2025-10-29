@@ -111,13 +111,6 @@
   flex-wrap: wrap;
 }
 
-.upload-label {
-  color: #cbd5e0;
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin: 0;
-}
-
 .file-input-wrapper {
   position: relative;
   display: flex;
@@ -279,9 +272,5 @@
   .wallet-info {
     flex-direction: column;
     text-align: center;
-  }
-  
-  .upload-section {
-    padding: 1.5rem;
   }
 }
