@@ -32,6 +32,7 @@ function App() {
   const [status, setStatus] = useState<string>();
   const [error, setError] = useState<string>();
   const [wallet, setWallet] = useState<StarknetWindowObject>();
+  const [fileName, setFileName] = useState<string>("");
 
   wallet?.on("networkChanged", (accounts: string[]) => {
     console.log("networkChanged", accounts);
@@ -62,6 +63,8 @@ function App() {
     if (!files?.length) {
       return;
     }
+
+    setFileName(files[0].name);
 
     let reader = new FileReader();
     reader.onload = () => {
@@ -104,64 +107,110 @@ function App() {
 
   if (!wallet) {
     return (
-      <div className="App mt-3">
-        <Button onClick={connectWallet}>Connect wallet</Button>
+      <div className="App">
+        <div className="connect-container">
+          <div>
+            <h1 className="app-title">Starknet Disperse</h1>
+            <p className="app-subtitle">Bulk token transfer made simple</p>
+          </div>
+          <Button onClick={connectWallet} className="connect-btn">
+            Connect Wallet
+          </Button>
+        </div>
       </div>
     );
   }
 
   const address = wallet.account.address;
   return (
-    <div className="App mt-3 px-3">
-      <div className="fw-light">
-        Connected {address!.slice(0, 6)}...{address!.slice(-4)} to {wallet.chainId}.{" "}
-        <a
-          href="/"
-          onClick={async (e) => {
-            e.preventDefault();
-            await disconnect();
-            setWallet(undefined);
-          }}
-        >
-          Disconnect
-        </a>
+    <div className="App px-3 py-4">
+      <div className="container" style={{ maxWidth: 1200 }}>
+        <h1 className="app-title">Starknet Disperse</h1>
+        
+        <div className="header-section">
+          <div className="wallet-info">
+            <div>
+              <span className="wallet-address">
+                {address!.slice(0, 8)}...{address!.slice(-6)}
+              </span>
+            </div>
+            <div>
+              <span className="network-badge">{wallet.chainId}</span>
+            </div>
+            <div>
+              <a
+                href="/"
+                className="disconnect-link"
+                onClick={async (e) => {
+                  e.preventDefault();
+                  await disconnect();
+                  setWallet(undefined);
+                }}
+              >
+                Disconnect
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="upload-section">
+          <div className="upload-label">📄 Upload CSV File</div>
+          <div className="file-input-wrapper">
+            <input 
+              id="formFileLg" 
+              type="file" 
+              accept=".csv"
+              onChange={handleChangeFile} 
+            />
+            <label htmlFor="formFileLg" className="file-input-label">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 4V16M10 4L6 8M10 4L14 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M4 17H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+              Choose CSV File
+            </label>
+            <div className="file-name">{fileName && `Selected: ${fileName}`}</div>
+          </div>
+        </div>
+
+        {lines && (
+          <>
+            <div className="table-container">
+              <Table striped bordered hover size="sm">
+                <thead>
+                  <tr>
+                    <th className="col-name">To</th>
+                    <th className="col-address">ToAddress</th>
+                    <th className="col-token">Token</th>
+                    <th className="col-address">TokenAddress</th>
+                    <th className="col-amount">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {lines.map((line, index) => (
+                    <tr key={index}>
+                      <td className="align-middle col-name">{line.To}</td>
+                      <td className="align-middle col-address">
+                        {line.ToAddress}
+                      </td>
+                      <td className="align-middle col-token">{line.Token}</td>
+                      <td className="align-middle col-address">
+                        {line.TokenAddress}
+                      </td>
+                      <td className="align-middle col-amount">{line.Amount}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </div>
+            <Button onClick={() => handleSend(lines)} className="send-btn">
+              Send Transfers
+            </Button>
+            {status && <Alert variant="info">{status}</Alert>}
+            {error && <Alert variant="danger">{error}</Alert>}
+          </>
+        )}
       </div>
-      <div className="text-center mx-auto mt-3" style={{ maxWidth: 400 }}>
-        <input className="form-control" id="formFileLg" type="file" placeholder="Foo" onChange={handleChangeFile} />
-      </div>
-      {lines && (
-        <>
-          <Table striped bordered hover size="sm" className="mt-3">
-            <thead>
-              <tr>
-                <th>To</th>
-                <th>ToAddress</th>
-                <th>Token</th>
-                <th>TokenAddress</th>
-                <th>Amount</th>
-              </tr>
-            </thead>
-            <tbody>
-              {lines.map((line, index) => (
-                <tr key={index}>
-                  <td className="align-middle">{line.To}</td>
-                  <td className="align-middle" style={{ fontSize: "0.8rem" }}>
-                    {line.ToAddress}
-                  </td>
-                  <td className="align-middle">{line.Token}</td>
-                  <td className="align-middle" style={{ fontSize: "0.8rem" }}>
-                    {line.TokenAddress}
-                  </td>
-                  <td className="align-middle">{line.Amount}</td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-          <Button onClick={() => handleSend(lines)}>Send</Button>
-          {status && <Alert variant="info">{status}</Alert>}
-          {error && <Alert variant="danger">{error}</Alert>}
-        </>
-      )}
     </div>
   );
 }

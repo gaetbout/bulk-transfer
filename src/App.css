@@ -1,38 +1,284 @@
 .App {
-  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding-bottom: 3rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  /* background-color: #282c34; */
+.connect-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 2rem;
+}
+
+.app-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.app-subtitle {
+  color: #a0aec0;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.connect-btn {
+  padding: 1rem 3rem !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  border-radius: 50px !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.connect-btn:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4) !important;
+}
+
+.header-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.wallet-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.wallet-address {
+  font-family: 'Monaco', 'Courier New', monospace;
+  color: #a0aec0;
+  font-size: 0.95rem;
+}
+
+.network-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: rgba(102, 126, 234, 0.2);
+  border: 1px solid rgba(102, 126, 234, 0.4);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.disconnect-link {
+  color: #f56565 !important;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.disconnect-link:hover {
+  color: #fc8181 !important;
+  text-decoration: underline;
+}
+
+.upload-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 0 auto 2rem;
+  max-width: 600px;
+  border: 2px dashed rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.upload-section:hover {
+  border-color: rgba(102, 126, 234, 0.6);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.upload-label {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: #cbd5e0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.file-input-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.file-input-wrapper input[type="file"] {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+.file-input-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.2rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
-.App-link {
-  color: #61dafb;
+.file-input-label:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.file-name {
+  margin-top: 1rem;
+  color: #90cdf4;
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-height: 1.5rem;
+}
+
+.table-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  overflow-x: auto;
+}
+
+@media (min-width: 769px) {
+  .table-container {
+    overflow-x: visible;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.table {
+  color: #f7fafc !important;
+  margin-bottom: 0 !important;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.table thead th {
+  background: rgba(102, 126, 234, 0.3) !important;
+  border-color: rgba(102, 126, 234, 0.4) !important;
+  color: #e0e7ff !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 1rem !important;
+}
+
+.table tbody td {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  padding: 1rem !important;
+  color: #f7fafc !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.table tbody tr:hover td {
+  background: rgba(102, 126, 234, 0.15) !important;
+}
+
+.table .col-name {
+  width: 12%;
+}
+
+.table .col-address {
+  width: 28%;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+.table .col-token {
+  width: 12%;
+}
+
+.table .col-amount {
+  width: 20%;
+}
+
+.send-btn {
+  padding: 0.8rem 3rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  border-radius: 50px !important;
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%) !important;
+  border: none !important;
+  box-shadow: 0 8px 20px rgba(72, 187, 120, 0.3) !important;
+  transition: all 0.3s ease !important;
+  display: block;
+  margin: 0 auto 1.5rem;
+}
+
+.send-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 30px rgba(72, 187, 120, 0.4) !important;
+}
+
+.alert {
+  border-radius: 12px !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.alert-info {
+  background: rgba(66, 153, 225, 0.2) !important;
+  color: #90cdf4 !important;
+  border-left: 4px solid #4299e1 !important;
+}
+
+.alert-danger {
+  background: rgba(245, 101, 101, 0.2) !important;
+  color: #fc8181 !important;
+  border-left: 4px solid #f56565 !important;
+}
+
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2rem;
+  }
+  
+  .app-subtitle {
+    font-size: 1rem;
+  }
+  
+  .wallet-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .upload-section {
+    padding: 1.5rem;
   }
 }
