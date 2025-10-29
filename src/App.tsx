@@ -125,7 +125,7 @@ function App() {
   return (
     <div className="App px-3 py-4">
       <div className="container" style={{ maxWidth: 1200 }}>
-        <h1 className="app-title">Starknet Disperse</h1>
+        <h1 className="app-title compact">Starknet Disperse</h1>
         
         <div className="header-section">
           <div className="wallet-info">
@@ -151,31 +151,28 @@ function App() {
               </a>
             </div>
           </div>
-        </div>
-
-        <div className="upload-section">
-          <div className="upload-label">📄 Upload CSV File</div>
-          <div className="file-input-wrapper">
-            <input 
-              id="formFileLg" 
-              type="file" 
-              accept=".csv"
-              onChange={handleChangeFile} 
-            />
-            <label htmlFor="formFileLg" className="file-input-label">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 4V16M10 4L6 8M10 4L14 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M4 17H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-              Choose CSV File
-            </label>
-            <div className="file-name">{fileName && `Selected: ${fileName}`}</div>
+          
+          <div className="upload-section">
+            <div className="file-input-wrapper">
+              <input 
+                id="formFileLg" 
+                type="file" 
+                accept=".csv"
+                onChange={handleChangeFile} 
+              />
+              <label htmlFor="formFileLg" className="file-input-label">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 4V16M10 4L6 8M10 4L14 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M4 17H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+                Choose CSV File
+              </label>
+              <div className="file-name">{fileName && `Selected: ${fileName}`}</div>
+            </div>
           </div>
-        </div>
 
-        {lines && (
-          <>
-            <div className="table-container">
+          {lines && (
+            <div className="table-section">
               <Table striped bordered hover size="sm">
                 <thead>
                   <tr>
@@ -203,6 +200,11 @@ function App() {
                 </tbody>
               </Table>
             </div>
+          )}
+        </div>
+
+        {lines && (
+          <>
             <Button onClick={() => handleSend(lines)} className="send-btn">
               Send Transfers
             </Button>
