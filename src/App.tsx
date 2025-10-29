@@ -32,7 +32,6 @@ function App() {
   const [status, setStatus] = useState<string>();
   const [error, setError] = useState<string>();
   const [wallet, setWallet] = useState<StarknetWindowObject>();
-  const [provider, setProvider] = useState<RpcProvider>();
 
   wallet?.on("networkChanged", (accounts: string[]) => {
     console.log("networkChanged", accounts);
@@ -43,14 +42,7 @@ function App() {
     if (!wallet) {
       return;
     }
-    let nodeUrl = "";
     setWallet(wallet);
-    if (wallet.chainId === "SN_MAIN") {
-      nodeUrl = "https://starknet-mainnet.g.alchemy.com/starknet/version/rpc/v0_8/5FsWX3uzJOQLy2av3fZfLF5LhNHUh0_7";
-    } else if (wallet.chainId === "SN_GOERLI") {
-      nodeUrl = "https://starknet-goerli.infura.io/v3/76fac2f9c85a49878a233e624acd14d5";
-    }
-    setProvider(new RpcProvider({ nodeUrl }));
   }
 
   useEffect(() => {
@@ -83,7 +75,7 @@ function App() {
     setStatus(undefined);
 
     const promises = lines.map(async ({ ToAddress, Token, TokenAddress, Amount }) => {
-      const { result } = await provider!.callContract({ contractAddress: TokenAddress, entrypoint: "decimals" });
+      const { result } = await wallet?.provider?.callContract({ contractAddress: TokenAddress, entrypoint: "decimals" });
       const [decimals] = result;
       console.log("decimals for ", Token, "->", decimals);
       const amount = ethers.utils.parseUnits(Amount, decimals).toString();
