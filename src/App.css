@@ -1,11 +1,14 @@
 .App {
   min-height: 100vh;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.App.connected {
   padding-bottom: 3rem;
 }
 
 .connect-container {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

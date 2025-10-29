@@ -123,7 +123,7 @@ function App() {
 
   const address = wallet.account.address;
   return (
-    <div className="App px-3 py-4">
+    <div className="App connected px-3 py-4">
       <div className="container" style={{ maxWidth: 1200 }}>
         <h1 className="app-title compact">Starknet Disperse</h1>
         
