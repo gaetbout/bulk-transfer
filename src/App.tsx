@@ -46,7 +46,7 @@ function App() {
     let nodeUrl = "";
     setWallet(wallet);
     if (wallet.chainId === "SN_MAIN") {
-      nodeUrl = "https://starknet-mainnet.infura.io/v3/76fac2f9c85a49878a233e624acd14d5";
+      nodeUrl = "https://starknet-mainnet.g.alchemy.com/starknet/version/rpc/v0_8/5FsWX3uzJOQLy2av3fZfLF5LhNHUh0_7";
     } else if (wallet.chainId === "SN_GOERLI") {
       nodeUrl = "https://starknet-goerli.infura.io/v3/76fac2f9c85a49878a233e624acd14d5";
     }
